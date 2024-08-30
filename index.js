@@ -29,7 +29,7 @@ const addNewGoal = () => {
     const goals = Array.from(goalList.getElementsByTagName('li'))
     const existingGoal = goals.some(goal => goal.textContent === goalInput)
     if (existingGoal) {
-        alert('Goal alredy exist') // prevent duplicating a daily goal
+        alert('Goal already exist') // prevent duplicating a daily goal
         return;
     }
     
