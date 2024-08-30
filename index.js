@@ -22,16 +22,14 @@ const addNewGoal = () => {
     const goalInput = document.querySelector('#goalInput').value;
     const goalList = document.querySelector('#goalList');
     
-    // ⚠️ Hint 1: Check for duplicates
-    // Use 'goalList' to get all existing goals and check if 'goalInput' matches any of them.
     if (!goalInput) {
-        alert('Enter your daily goal')
+        alert('Enter your daily goal') //Alert to enter your daily goal
         return;
     }
     const goals = Array.from(goalList.getElementsByTagName('li'))
     const existingGoal = goals.some(goal => goal.textContent === goalInput)
     if (existingGoal) {
-        alert('Goal alredy exist')
+        alert('Goal alredy exist') // prevent duplicating a daily goal
         return;
     }
     
@@ -39,7 +37,7 @@ const addNewGoal = () => {
     newGoal.textContent = goalInput;
     goalList.appendChild(newGoal);
 
-    document.querySelector('#goalInput').value = '';
+    document.querySelector('#goalInput').value = ''; 
 };
 
 // Add event listener to the goal submit button
