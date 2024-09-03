@@ -26,8 +26,14 @@ const addNewGoal = () => {
         alert('Enter your daily goal') //Alert to enter your daily goal
         return;
     }
-    const goals = Array.from(goalList.getElementsByTagName('li'))
-    const existingGoal = goals.some(goal => goal.textContent === goalInput)
+
+    // Convert to lowercase for comparison
+   // goalInput = goalInput.toLowerCase();
+    
+
+    const goals = Array.from(goalList.getElementsByTagName('li')) //Create an Array of daily goals in an unordered list
+    const existingGoal = goals.some(goal => goal.textContent.toLowerCase() === goalInput.toLowerCase())
+
     if (existingGoal) {
         alert('Goal already exist') // prevent duplicating a daily goal
         return;
